@@ -103,9 +103,9 @@ No laboratório, isso ajudou a identificar o `BEGIN TRAN` seguido pelo `UPDATE` 
 
 ---
 
-### Evidência
+## 📸 Evidência do laboratório
 
-![Sessão sleeping com transação aberta](../docs/images/sleeping-open-transaction.png)
+![Sessão sleeping](../docs/images/sleeping-open-transaction.png)
 
 Durante o teste, a sessão `52` foi identificada com status `sleeping`,
 mas ainda possuía uma transação aberta (`open_transaction_count = 1`).
