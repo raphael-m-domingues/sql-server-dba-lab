@@ -103,6 +103,21 @@ No laboratório, isso ajudou a identificar o `BEGIN TRAN` seguido pelo `UPDATE` 
 
 ---
 
+### Evidência
+
+![Sessão sleeping com transação aberta](../docs/images/sleeping-open-transaction.png)
+
+Durante o teste, a sessão `52` foi identificada com status `sleeping`,
+mas ainda possuía uma transação aberta (`open_transaction_count = 1`).
+
+Ao mesmo tempo, outra sessão aguardava a liberação do recurso, demonstrando
+que uma sessão sem requisição ativa ainda pode manter locks quando existe
+uma transação aberta.
+
+> Os IDs das sessões e os tipos de espera podem variar entre execuções do laboratório.
+
+---
+
 ## 🔄 Resolução
 
 Como a alteração foi realizada apenas para simular o problema, a transação foi revertida:
