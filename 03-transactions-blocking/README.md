@@ -44,6 +44,7 @@ Durante o teste, a sessão bloqueada apresentou informações semelhantes a:
 
 | Propriedade | Resultado observado |
 |---|---|
+| Session ID | 54 |
 | Status | suspended |
 | Blocking Session | 53 |
 | Wait Type | LCK_M_S |
@@ -55,6 +56,22 @@ Os IDs das sessões são dinâmicos e podem mudar entre execuções.
 O wait type `LCK_M_S` indica que a requisição está aguardando a obtenção de um **Shared Lock (S)**.
 
 No cenário reproduzido, a leitura não conseguiu prosseguir porque outra sessão mantinha uma transação de escrita aberta sobre o recurso necessário.
+
+---
+
+## 📸 Evidência do laboratório
+
+Durante a simulação, o blocking foi identificado através da DMV
+`sys.dm_exec_requests`.
+
+![Blocking identificado no SQL Server](../docs/images/blocking-detection.png)
+
+No cenário observado, a sessão `54` estava com status `suspended` e
+aguardava um Shared Lock (`LCK_M_S`), enquanto a sessão `53` foi
+identificada como a sessão bloqueadora.
+
+> Os IDs das sessões são atribuídos dinamicamente pelo SQL Server e podem
+> ser diferentes em outras execuções do laboratório.
 
 ---
 
