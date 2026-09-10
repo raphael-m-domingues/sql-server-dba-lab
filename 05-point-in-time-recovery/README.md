@@ -159,6 +159,25 @@ FROM DB_Laboratorio_PointInTime.dbo.Clientes
 WHERE Email = 'eduardo@email.com';
 ```
 
+---
+
+### 📸 Evidência da recuperação
+
+![Resultado do Point-in-Time Recovery](../docs/images/point-in-time-recovery-result.png)
+
+Na primeira consulta, realizada no banco original após o incidente, nenhum
+registro foi encontrado.
+
+Na segunda consulta, realizada no banco
+`DB_Laboratorio_PointInTime`, o registro de `Eduardo Santos` estava
+presente novamente.
+
+Isso demonstra que o banco restaurado representa um estado anterior ao
+`DELETE`, enquanto o banco original permanece no estado posterior ao
+incidente.
+
+---
+
 O registro de Eduardo estava novamente presente, demonstrando que o banco foi recuperado para um estado anterior à exclusão.
 
 ---
