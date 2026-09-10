@@ -94,6 +94,21 @@ Entre os backups foram realizadas alterações no banco para criar diferentes po
 
 ---
 
+## 📸 Evidência do laboratório
+
+O histórico de backups registrado no banco de sistema `msdb` foi consultado
+para validar a sequência de backups realizada durante o laboratório.
+
+![Histórico de backups do SQL Server](../docs/images/backup-history.png)
+
+O histórico mostra o FULL Backup utilizado como base e os Transaction Log
+Backups realizados posteriormente.
+
+A consulta ao `msdb` permite verificar informações como tipo do backup,
+horário de início e término e tamanho do arquivo gerado.
+
+---
+
 ## ♻️ Restaurando a cadeia
 
 Para testar a recuperação sem sobrescrever o banco original, o backup foi restaurado como:
