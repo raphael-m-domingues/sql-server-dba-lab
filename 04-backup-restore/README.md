@@ -132,6 +132,21 @@ LOG 02
  ▼
 ONLINE
 ```
+---
+
+### 📸 Validação do restore
+
+Após a aplicação do FULL Backup e dos Transaction Log Backups, o estado
+dos bancos foi consultado através da `sys.databases`.
+
+![Validação do banco restaurado](../docs/images/restore-database-online.png)
+
+O banco `DB_Laboratorio_Restore` foi encontrado no estado `ONLINE`,
+confirmando que a sequência de restauração foi finalizada com sucesso
+utilizando `RECOVERY`.
+
+O banco original permaneceu disponível durante o teste, pois a restauração
+foi realizada em um banco separado.
 
 ---
 
