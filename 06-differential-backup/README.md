@@ -108,6 +108,16 @@ Durante o laboratório, o histórico registrado no `msdb` mostrou:
 | DIFF 01 | 3.09 MB |
 | DIFF 02 | 4.09 MB |
 
+---
+
+### Evidência — Histórico dos Backups
+
+A consulta ao histórico de backups no `msdb` confirmou a criação da base FULL e dos dois backups diferenciais.
+
+![Histórico dos backups diferenciais](../docs/images/differential-backup-history.png)
+
+---
+
 O aumento observado entre os diferenciais está relacionado às extensões modificadas desde a base FULL.
 
 > O tamanho de um Differential Backup não representa simplesmente a quantidade de linhas alteradas. O SQL Server trabalha com extensões de dados modificadas.
@@ -155,6 +165,16 @@ Webcam
 ```
 
 Os cinco registros estavam presentes.
+
+---
+
+### Evidência — Restore com FULL + DIFF 02
+
+A consulta no banco `DB_Laboratorio_DiffRestore` confirmou a recuperação dos cinco produtos após a restauração utilizando somente a base FULL e o `DIFF 02`.
+
+![Resultado do restore diferencial](../docs/images/differential-restore-result.png)
+
+---
 
 Isso demonstrou que o `DIFF 02` continha as extensões modificadas desde sua base FULL, incluindo alterações realizadas antes e depois da criação do `DIFF 01`.
 
