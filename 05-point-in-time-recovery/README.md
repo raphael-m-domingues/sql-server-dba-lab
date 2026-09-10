@@ -131,7 +131,7 @@ Msg 3013
 RESTORE LOG está sendo encerrado de forma anormal.
 ```
 
-O valor utilizado possuía precisão fracionária que não foi aceita nesse contexto pelo comando de restore.
+Como parte do troubleshooting, o valor utilizado em STOPAT foi revisado antes de uma nova tentativa de restauração.
 
 ---
 
