@@ -137,7 +137,7 @@ Como parte do troubleshooting, o valor utilizado em STOPAT foi revisado antes de
 
 ## 🔧 Correção aplicada
 
-O valor foi ajustado para:
+Foi utilizado um horário com precisão em segundos, ainda dentro da janela anterior ao incidente:
 
 ```sql
 STOPAT = '2026-09-08T23:57:51'
