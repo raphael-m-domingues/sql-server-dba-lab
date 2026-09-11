@@ -36,6 +36,7 @@ O projeto abordará:
 
 ```text
 sql-server-dba-lab/
+│
 ├── 01-instance-configuration/
 ├── 02-database-files/
 ├── 03-transactions-blocking/
@@ -43,5 +44,30 @@ sql-server-dba-lab/
 ├── 05-point-in-time-recovery/
 ├── 06-differential-backup/
 ├── 07-sql-server-agent/
-└── docs/
-    └── images/
+├── 08-logins-users-roles/
+├── 09-indexes-statistics/
+├── 10-monitoring-performance/
+├── 11-integrity-maintenance/
+├── 12-disaster-recovery-challenge/
+│
+├── docs/
+│   └── images/
+│
+└── README.md
+
+## 🗺️ Roadmap
+
+| Módulo | Tema | Status |
+|---|---|---|
+| 01 | Instance Configuration | ✅ Concluído |
+| 02 | Database Files | ✅ Concluído |
+| 03 | Transactions & Blocking | ✅ Concluído |
+| 04 | Backup & Restore | ✅ Concluído |
+| 05 | Point-in-Time Recovery | ✅ Concluído |
+| 06 | Differential Backup | ✅ Concluído |
+| 07 | SQL Server Agent | ✅ Concluído |
+| 08 | Logins, Users & Roles | ⏳ Próximo |
+| 09 | Indexes & Statistics | ⏳ Planejado |
+| 10 | Monitoring & Performance | ⏳ Planejado |
+| 11 | Integrity & Maintenance | ⏳ Planejado |
+| 12 | Disaster Recovery Challenge | ⏳ Planejado |
