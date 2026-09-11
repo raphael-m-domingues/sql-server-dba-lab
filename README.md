@@ -54,20 +54,3 @@ sql-server-dba-lab/
 │   └── images/
 │
 └── README.md
-
-## 🗺️ Roadmap
-
-| Módulo | Tema | Status |
-|---|---|---|
-| 01 | Instance Configuration | ✅ Concluído |
-| 02 | Database Files | ✅ Concluído |
-| 03 | Transactions & Blocking | ✅ Concluído |
-| 04 | Backup & Restore | ✅ Concluído |
-| 05 | Point-in-Time Recovery | ✅ Concluído |
-| 06 | Differential Backup | ✅ Concluído |
-| 07 | SQL Server Agent | ✅ Concluído |
-| 08 | Logins, Users & Roles | ⏳ Próximo |
-| 09 | Indexes & Statistics | ⏳ Planejado |
-| 10 | Monitoring & Performance | ⏳ Planejado |
-| 11 | Integrity & Maintenance | ⏳ Planejado |
-| 12 | Disaster Recovery Challenge | ⏳ Planejado |
