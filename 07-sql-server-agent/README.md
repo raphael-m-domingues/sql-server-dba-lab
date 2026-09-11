@@ -142,6 +142,13 @@ DB_Laboratorio_AGENT_LOG.trn
 
 Esse modelo foi substituído pela geração de arquivos com timestamp para evitar a sobrescrita dos backups anteriores e preservar os arquivos necessários à estratégia de recuperação.
 
+### Evidência
+
+A execução automatizada gerou arquivos de Transaction Log distintos,
+utilizando data e hora no nome de cada arquivo.
+
+![Transaction Log backups com timestamp](../docs/images/transaction-log-timestamp-files.png)
+
 ---
 
 ## 🕐 Geração dinâmica de nomes
@@ -302,6 +309,13 @@ Como todos os backups existentes eram recentes, o resultado foi:
 Limpeza concluida. Arquivos removidos: 0
 ```
 
+### Evidência
+
+O histórico do SQL Server Agent foi utilizado para acompanhar as execuções
+do Job e validar o comportamento da rotina durante o troubleshooting.
+
+![Histórico do Backup Cleanup](../docs/images/backup-cleanup-history.png)
+
 Esse resultado confirmou que a rotina estava funcional sem excluir arquivos válidos.
 
 ---
@@ -331,6 +345,13 @@ ORDER BY bs.backup_finish_date DESC;
 ```
 
 A consulta confirmou a criação de backups FULL, Differential e Transaction Log pelos Jobs.
+
+### Evidência
+
+O histórico armazenado no `msdb` confirmou as execuções de backups
+FULL, Differential e Transaction Log realizadas durante o laboratório.
+
+![Histórico de backups no msdb](../docs/images/agent-backup-history.png)
 
 ---
 
