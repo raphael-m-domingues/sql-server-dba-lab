@@ -141,6 +141,13 @@ A operação de `INSERT` passou a ser explicitamente negada.
 
 O `DENY` representa uma negação explícita de permissão.
 
+### Evidência
+
+Sem a permissão necessária, a tentativa de executar `INSERT`
+em `dbo.Clientes` foi bloqueada pelo SQL Server.
+
+![INSERT negado por falta de permissão](../docs/images/security-insert-denied.png)
+
 ---
 
 ## 🔄 REVOKE
@@ -223,6 +230,14 @@ app_laboratorio
               ▼
          dbo.Clientes
 ```
+
+### Evidência
+
+A consulta aos catálogos de segurança confirmou que o `SELECT`
+estava concedido à `role_leitura`, enquanto o usuário
+`app_laboratorio` possuía acesso por meio da associação à Role.
+
+![Permissões através de Database Role](../docs/images/security-role-permissions.png)
 
 ---
 
@@ -368,6 +383,21 @@ dbo.Produtos
 ```
 
 Esse modelo oferece somente as permissões necessárias para a aplicação.
+
+### Evidência
+
+As permissões efetivas do usuário foram validadas com
+`HAS_PERMS_BY_NAME()`.
+
+O resultado confirmou o modelo de menor privilégio:
+
+- `SELECT` em `dbo.Clientes`: permitido;
+- `INSERT` em `dbo.Clientes`: permitido;
+- `UPDATE` em `dbo.Clientes`: permitido;
+- `DELETE` em `dbo.Clientes`: não permitido;
+- `SELECT` em `dbo.Produtos`: não permitido.
+
+![Permissões efetivas do usuário](../docs/images/security-effective-permissions.png)
 
 ---
 
